@@ -17,7 +17,6 @@ namespace Presentation
         private void Start()
         {
             rigidbody = GetComponent<Rigidbody>();
-            new PlayerMaps
             input.Enable();
         }
         
