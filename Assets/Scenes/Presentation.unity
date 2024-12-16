@@ -428,6 +428,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   speed: 5
+  jumpForce: 10
   input:
     m_Name: Input
     m_Type: 0
@@ -476,6 +477,23 @@ MonoBehaviour:
       m_Groups: 
       m_Action: Input
       m_Flags: 8
+    m_Flags: 0
+  jumpInput:
+    m_Name: Jump Input
+    m_Type: 1
+    m_ExpectedControlType: Button
+    m_Id: 645e736b-0224-44e2-95a8-20afbab108cd
+    m_Processors: 
+    m_Interactions: 
+    m_SingletonActionBindings:
+    - m_Name: 
+      m_Id: 6ce64e76-702b-4b59-bb32-5d605076cd92
+      m_Path: <Keyboard>/space
+      m_Interactions: 
+      m_Processors: 
+      m_Groups: 
+      m_Action: Jump Input
+      m_Flags: 0
     m_Flags: 0
 --- !u!54 &1855489108
 Rigidbody:
