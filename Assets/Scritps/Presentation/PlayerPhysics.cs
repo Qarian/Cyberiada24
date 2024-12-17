@@ -8,6 +8,7 @@ namespace Presentation
     {
         [SerializeField] private float speed;
         [SerializeField] private float jumpForce;
+        public Vector3 test;
 
         private new Rigidbody rigidbody;
         [SerializeField]
