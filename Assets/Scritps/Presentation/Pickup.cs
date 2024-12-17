@@ -26,6 +26,7 @@ namespace Presentation
                 animator.SetTrigger("Pick");
                 //Destroy(this.gameObject);
                 audio.Play();
+                Destroy(gameObject, animator.GetCurrentAnimatorStateInfo(0).length);
             }
         }
 
