@@ -5,13 +5,25 @@ namespace Presentation
 {
     public class Pickup : MonoBehaviour
     {
+        //private static readonly int Pick = Animator.StringToHash("Pick");
+        [SerializeField] private Animator animator;
+
+        private void Start()
+        {
+            // if (animator == null)
+            //     animator = GetComponentInChildren<Animator>();
+            animator ??= GetComponentInChildren<Animator>();
+        }
+
         private void OnTriggerEnter(Collider other)
         {
             //var component = GetComponent<PlayerPhysics>();
             if (other.TryGetComponent<PlayerPhysics>(out var player))
             {
                 player.points++;
-                Destroy(this.gameObject);
+                //animator.Play("Pick");
+                animator.SetTrigger("Pick");
+                //Destroy(this.gameObject);
             }
             
         }
