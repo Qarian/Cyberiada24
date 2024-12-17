@@ -630,6 +630,26 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 4248753674215420537, guid: 381acea25fafa2a619fcde1f0fc14238, type: 3}
+      propertyPath: m_LocalRotation.w
+      value: 0.84462327
+      objectReference: {fileID: 0}
+    - target: {fileID: 4248753674215420537, guid: 381acea25fafa2a619fcde1f0fc14238, type: 3}
+      propertyPath: m_LocalRotation.x
+      value: 0.46193978
+      objectReference: {fileID: 0}
+    - target: {fileID: 4248753674215420537, guid: 381acea25fafa2a619fcde1f0fc14238, type: 3}
+      propertyPath: m_LocalRotation.y
+      value: 0.19134173
+      objectReference: {fileID: 0}
+    - target: {fileID: 4248753674215420537, guid: 381acea25fafa2a619fcde1f0fc14238, type: 3}
+      propertyPath: m_LocalRotation.z
+      value: 0.19134173
+      objectReference: {fileID: 0}
+    - target: {fileID: 4248753674215420537, guid: 381acea25fafa2a619fcde1f0fc14238, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.y
+      value: 45
+      objectReference: {fileID: 0}
     - target: {fileID: 7067977797423606531, guid: 381acea25fafa2a619fcde1f0fc14238, type: 3}
       propertyPath: m_Name
       value: Pickup
