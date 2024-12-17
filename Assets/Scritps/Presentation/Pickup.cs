@@ -7,7 +7,8 @@ namespace Presentation
     {
         //private static readonly int Pick = Animator.StringToHash("Pick");
         [SerializeField] private Animator animator;
-
+        [SerializeField] private AudioSource audio;
+        
         private void Start()
         {
             // if (animator == null)
@@ -24,8 +25,8 @@ namespace Presentation
                 //animator.Play("Pick");
                 animator.SetTrigger("Pick");
                 //Destroy(this.gameObject);
+                audio.Play();
             }
-            
         }
 
         private void OnCollisionEnter(Collision other)
