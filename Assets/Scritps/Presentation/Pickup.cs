@@ -8,6 +8,8 @@ namespace Presentation
         //private static readonly int Pick = Animator.StringToHash("Pick");
         [SerializeField] private Animator animator;
         [SerializeField] private AudioSource audio;
+        [SerializeField] private ParticleSystem particle;
+        
         
         private void Start()
         {
@@ -26,6 +28,7 @@ namespace Presentation
                 animator.SetTrigger("Pick");
                 //Destroy(this.gameObject);
                 audio.Play();
+                particle.Play();
                 Destroy(gameObject, animator.GetCurrentAnimatorStateInfo(0).length);
             }
         }
