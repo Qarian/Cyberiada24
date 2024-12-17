@@ -6,6 +6,8 @@ namespace Presentation
 {
     public class PlayerPhysics : MonoBehaviour
     {
+        public int points;
+        
         [SerializeField] private float speed;
         [SerializeField] private float jumpForce;
         public Vector3 test;
@@ -37,7 +39,6 @@ namespace Presentation
             // float axisRaw = Input.GetAxisRaw("Horizontal");
             // bool buttonPressed = Input.GetKey(KeyCode.D);
             inputMovement = input.ReadValue<Vector2>();
-            Debug.Log(inputMovement);
         }
 
         private void FixedUpdate()
