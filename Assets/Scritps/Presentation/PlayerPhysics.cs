@@ -41,8 +41,23 @@ namespace Presentation
 
         private void FixedUpdate()
         {
-            Vector3 movement = new Vector3(inputMovement.x, 0, inputMovement.y) * (speed * Time.fixedDeltaTime);
+            Vector3 movement = GetDirection() * (speed * Time.fixedDeltaTime);
             rigidbody.MovePosition(transform.position + movement);
+        }
+
+        private Vector3 GetDirection()
+        {
+            var cameraTransform = Camera.main.transform;
+
+            Vector3 forward = cameraTransform.forward;
+            forward.y = 0;
+            forward.Normalize();
+            
+            Vector3 right = cameraTransform.right;
+            right.y = 0;
+            right.Normalize();
+            
+            return forward * inputMovement.y + right * inputMovement.x;
         }
     }
 }
