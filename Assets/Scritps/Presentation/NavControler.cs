@@ -1,4 +1,4 @@
-using System;
+using System.Collections;
 using UnityEngine;
 using UnityEngine.AI;
 using UnityEngine.InputSystem;
@@ -16,11 +16,12 @@ namespace Presentation
 
         private float speed;
 
+        private float pickupTime;
+
         private void Start()
         {
             input.performed += InputOnperformed;
             speed = data.speed;
-            
         }
 
         private void InputOnperformed(InputAction.CallbackContext obj)
@@ -43,7 +44,23 @@ namespace Presentation
 
         public void Pick()
         {
-            speed *= 5f;
+            //StartCoroutine(Pickup());
+            speed *= 5;
+            Invoke(nameof(Test), 5f);
+            pickupTime = Time.time;
+        }
+
+        private void Test()
+        {
+            speed /= 5f;
+        }
+
+        IEnumerator Pickup()
+        {
+            speed *= 5;
+            yield return new WaitForSeconds(5);
+            speed /= 5f;
+            yield return new WaitForEndOfFrame();
         }
     }
 }
