@@ -12,3 +12,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 9eefc84a1060473fad3e7533aa3b4d85, type: 3}
   m_Name: New Gameplay Runtime
   m_EditorClassIdentifier: 
+  points: 3
+  points2: 5
+  points3: 4
+  points4: 0
+  points5: 0
+  points6: 0

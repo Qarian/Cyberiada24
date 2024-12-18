@@ -74,3 +74,6 @@ crashlytics-build.properties
 /.idea/*
 /.vscode/*
 
+/Assets/Dorian/
+/Assets/Dorian.meta
+
