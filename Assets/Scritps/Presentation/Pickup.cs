@@ -9,8 +9,6 @@ namespace Presentation
         [SerializeField] private Animator animator;
         [SerializeField] private AudioSource audio;
         [SerializeField] private ParticleSystem particle;
-
-        [SerializeField] private GameplayRuntime runtime;
         
         private void Start()
         {
@@ -21,22 +19,15 @@ namespace Presentation
 
         private void OnTriggerEnter(Collider other)
         {
-            //var component = GetComponent<PlayerPhysics>();
-            if (other.TryGetComponent<PlayerPhysics>(out var player))
+            if (other.TryGetComponent<IPicker>(out var picker))
             {
-                runtime.points++;
+                picker.Pick();
                 //animator.Play("Pick");
                 animator.SetTrigger("Pick");
                 //Destroy(this.gameObject);
                 audio.Play();
                 particle.Play();
                 Destroy(gameObject, animator.GetCurrentAnimatorStateInfo(0).length);
-            }
-
-            if (other.TryGetComponent<NavControler>(out var controller))
-            {
-                controller.Speed *= 5f;
-                Destroy(gameObject);
             }
         }
 

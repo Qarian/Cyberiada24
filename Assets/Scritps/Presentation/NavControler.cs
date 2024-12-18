@@ -5,7 +5,7 @@ using UnityEngine.InputSystem;
 
 namespace Presentation
 {
-    public class NavControler : MonoBehaviour
+    public class NavControler : MonoBehaviour, IPicker
     {
         [SerializeField] private AgentData data;
         
@@ -13,12 +13,6 @@ namespace Presentation
 
         [SerializeField]
         private InputAction input;
-
-        public float Speed
-        {
-            get => speed;
-            set => speed = value;
-        }
 
         private float speed;
 
@@ -45,6 +39,11 @@ namespace Presentation
             {
                 InputOnperformed(new InputAction.CallbackContext());
             }
+        }
+
+        public void Pick()
+        {
+            speed *= 5f;
         }
     }
 }
