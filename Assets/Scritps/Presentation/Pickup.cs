@@ -12,8 +12,6 @@ namespace Presentation
 
         [SerializeField] private GameplayRuntime runtime;
         
-        
-        
         private void Start()
         {
             // if (animator == null)
@@ -33,6 +31,12 @@ namespace Presentation
                 audio.Play();
                 particle.Play();
                 Destroy(gameObject, animator.GetCurrentAnimatorStateInfo(0).length);
+            }
+
+            if (other.TryGetComponent<NavControler>(out var controller))
+            {
+                controller.Speed *= 5f;
+                Destroy(gameObject);
             }
         }
 

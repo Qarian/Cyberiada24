@@ -12,6 +12,8 @@ namespace Presentation
         private void Update()
         {
             transform.Translate(Vector3.right * speed * Time.deltaTime);
+            Vector3 rot = transform.rotation.eulerAngles;
+            Quaternion newRot = Quaternion.Euler(rot);
         }
     }
 }
