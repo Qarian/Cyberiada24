@@ -9,6 +9,9 @@ namespace Presentation
         [SerializeField] private Animator animator;
         [SerializeField] private AudioSource audio;
         [SerializeField] private ParticleSystem particle;
+
+        [SerializeField] private GameplayRuntime runtime;
+        
         
         
         private void Start()
@@ -23,7 +26,7 @@ namespace Presentation
             //var component = GetComponent<PlayerPhysics>();
             if (other.TryGetComponent<PlayerPhysics>(out var player))
             {
-                player.points++;
+                runtime.points++;
                 //animator.Play("Pick");
                 animator.SetTrigger("Pick");
                 //Destroy(this.gameObject);

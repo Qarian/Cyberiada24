@@ -1,16 +1,15 @@
 using System;
+using TMPro;
 using UnityEngine;
+using UnityEngine.Events;
 using UnityEngine.InputSystem;
 
 namespace Presentation
 {
     public class PlayerPhysics : MonoBehaviour
     {
-        public int points;
-        
         [SerializeField] private float speed;
         [SerializeField] private float jumpForce;
-        public Vector3 test;
 
         private new Rigidbody rigidbody;
         [SerializeField]
@@ -19,6 +18,8 @@ namespace Presentation
         private InputAction jumpInput;
 
         private Vector2 inputMovement;
+        
+        public UnityEvent onJump;
         
         private void Start()
         {
@@ -31,6 +32,7 @@ namespace Presentation
         private void InputOnperformed(InputAction.CallbackContext obj)
         {
             rigidbody.AddForce(Vector3.up * jumpForce, ForceMode.Impulse);
+            onJump.Invoke();
         }
 
         private void Update()

@@ -498,6 +498,34 @@ PrefabInstance:
       propertyPath: m_Name
       value: Exit Button
       objectReference: {fileID: 0}
+    - target: {fileID: 6287642434411096150, guid: de79e4cfd333c24c0b6271000fd645fb, type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.size
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 6287642434411096150, guid: de79e4cfd333c24c0b6271000fd645fb, type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_Mode
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 6287642434411096150, guid: de79e4cfd333c24c0b6271000fd645fb, type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_Target
+      value: 
+      objectReference: {fileID: 11400000, guid: b8db02094c62611ae9fd2d97c2316316, type: 2}
+    - target: {fileID: 6287642434411096150, guid: de79e4cfd333c24c0b6271000fd645fb, type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_CallState
+      value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 6287642434411096150, guid: de79e4cfd333c24c0b6271000fd645fb, type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_MethodName
+      value: Quit
+      objectReference: {fileID: 0}
+    - target: {fileID: 6287642434411096150, guid: de79e4cfd333c24c0b6271000fd645fb, type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_TargetAssemblyTypeName
+      value: Presentation.GameplayRuntime, Assembly-CSharp
+      objectReference: {fileID: 0}
+    - target: {fileID: 6287642434411096150, guid: de79e4cfd333c24c0b6271000fd645fb, type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_Arguments.m_ObjectArgumentAssemblyTypeName
+      value: UnityEngine.Object, UnityEngine
+      objectReference: {fileID: 0}
     - target: {fileID: 9017796665381295975, guid: de79e4cfd333c24c0b6271000fd645fb, type: 3}
       propertyPath: m_text
       value: Exit

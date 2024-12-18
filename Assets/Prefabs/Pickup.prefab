@@ -156,6 +156,7 @@ MonoBehaviour:
   animator: {fileID: 6380971586005648555}
   audio: {fileID: 4727951329071549435}
   particle: {fileID: 6314280069283446323}
+  runtime: {fileID: 11400000, guid: b8db02094c62611ae9fd2d97c2316316, type: 2}
 --- !u!65 &8137455914000336111
 BoxCollider:
   m_ObjectHideFlags: 0
