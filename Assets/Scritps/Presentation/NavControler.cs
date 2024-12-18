@@ -5,23 +5,24 @@ using UnityEngine.InputSystem;
 
 namespace Presentation
 {
-    public class NavControler : MonoBehaviour, IPicker
+    public class NavControler : MonoBehaviour, IPicker, IUnit
     {
-        [SerializeField] private AgentData data;
-        
         [SerializeField] private NavMeshAgent agent;
-
+        [SerializeField] private MainMenu menu;
+        
         [SerializeField]
         private InputAction input;
+
+        private Coroutine pickupCoroutine;
 
         private float speed;
 
         private float pickupTime;
 
-        private void Start()
+        public void Init(AgentData data)
         {
-            input.performed += InputOnperformed;
             speed = data.speed;
+            input.performed += InputOnperformed;
         }
 
         private void InputOnperformed(InputAction.CallbackContext obj)
@@ -39,15 +40,17 @@ namespace Presentation
             if (Input.GetKeyDown(KeyCode.Mouse0))
             {
                 InputOnperformed(new InputAction.CallbackContext());
+                StopCoroutine(pickupCoroutine);
             }
         }
 
         public void Pick()
         {
-            //StartCoroutine(Pickup());
+            pickupCoroutine = StartCoroutine(Pickup());
             speed *= 5;
+            menu?.Run(this);
             Invoke(nameof(Test), 5f);
-            pickupTime = Time.time;
+            Destroy(gameObject);
         }
 
         private void Test()
@@ -55,12 +58,18 @@ namespace Presentation
             speed /= 5f;
         }
 
-        IEnumerator Pickup()
+        public IEnumerator Pickup()
         {
-            speed *= 5;
-            yield return new WaitForSeconds(5);
-            speed /= 5f;
-            yield return new WaitForEndOfFrame();
+            while (true)
+            {
+                yield return new WaitForSecondsRealtime(5);
+                speed /= 5f;
+            }
+        }
+
+        public void CustomUpdate(float deltaTime)
+        {
+            // AI Logic
         }
     }
 }

@@ -22,10 +22,11 @@ namespace Presentation
             {
                 picker.Pick();
                 //animator.Play("Pick");
-                animator.SetTrigger("Pick");
+                animator?.SetTrigger("Pick");
+                
                 //Destroy(this.gameObject);
-                audio.Play();
-                particle.Play();
+                audio?.Play();
+                particle?.Play();
                 Destroy(gameObject, animator.GetCurrentAnimatorStateInfo(0).length);
             }
         }
